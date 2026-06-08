@@ -1,0 +1,59 @@
+Helm
+1. Installation
+OS	               Command
+Ubuntu	        curl -s https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+macOS	          brew install helm
+Windows         choco install kubernetes-helm
+Verify: helm version
+
+
+Install Helm on ununtu
+
+Objective:
+Install Helm, the Kubernetes package manager.
+
+Commands:
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+
+Verification:
+helm version
+
+Learning:
+Helm simplifies Kubernetes application deployment using reusable Helm Charts.
+
+
+Install Helm
+What is Helm?
+Helm is the package manager for Kubernetes.
+
+Think:
+Ubuntu     -> apt
+Python     -> pip
+NodeJS     -> npm
+Kubernetes -> Helm
+Installation
+Download Helm Installation Script
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+Give Execute Permission
+chmod 700 get_helm.sh
+Why 700?
+Owner  -> Read Write Execute
+Group  -> No Permission
+Others -> No Permission
+Only the owner can execute it.
+
+Run Installation Script
+./get_helm.sh
+This script:
+Downloads Helm
+Installs Helm
+Places Helm in system PATH
+
+Verify
+helm version
+Expected output:
+version.BuildInfo{
+Version:"v3.x.x"
+}
