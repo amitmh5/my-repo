@@ -1,0 +1,67 @@
+Install kubectl
+Objective
+Install kubectl, the Kubernetes command-line tool used to communicate with and manage Kubernetes clusters.
+
+Why Do We Need kubectl?
+Think:
+docker  -> Docker CLI
+kubectl -> Kubernetes CLI
+
+Examples:
+kubectl get pods
+kubectl get nodes
+kubectl apply -f deployment.yaml
+
+Without kubectl:
+DevOps Engineer ❌ Kubernetes
+Installation Steps
+Step 13.1 - Download kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+What Happens?
+This downloads the latest stable kubectl binary from Kubernetes official servers.
+
+Step 13.2 - Verify File Downloaded
+ls -l kubectl
+Expected:
+-rw-r--r-- ...
+kubectl
+Notice:
+No execute permission yet
+Step 13.3 - Make Executable
+chmod +x kubectl
+Why?
+Adds:
+Execute Permission
+so Linux can run it as a program.
+
+Step 13.4 - Verify Permission
+ls -l kubectl
+Expected:
+-rwxr-xr-x
+Notice:
+x = execute permission
+Step 13.5 - Move To System Path
+sudo mv kubectl /usr/local/bin/
+Why?
+
+Instead of:
+./kubectl
+you can run:
+kubectl
+from anywhere.
+
+Step 13.6 - Verify Installation
+kubectl version --client
+
+Expected:
+Client Version: v1.xx.x
+Interview Questions
+What is kubectl?
+
+kubectl is the Kubernetes command-line interface used to interact with and manage Kubernetes clusters.
+
+Why move kubectl to /usr/local/bin?
+/usr/local/bin is part of the system PATH, allowing the command to be executed from any directory.
+
+What does chmod +x kubectl do?
+It adds execute permission to the kubectl binary, allowing Linux to run it as a program.
