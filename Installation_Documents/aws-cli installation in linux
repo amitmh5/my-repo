@@ -1,0 +1,29 @@
+Install AWS CLI
+
+Objective:
+Install AWS CLI to enable command-line interaction with AWS services.
+
+Why:
+Jenkins will use AWS CLI to authenticate and push Docker images to Amazon ECR.
+
+Command:
+sudo snap install aws-cli --classic
+What is Snap?
+Think:
+apt
+Traditional Ubuntu package manager.
+Old Style
+
+snap
+Modern package manager.
+Containerized Applications
+Auto Updates
+
+Verification:
+aws --version
+
+Expected Output:
+aws-cli/2.x.x
+
+Learning:
+AWS CLI enables infrastructure and deployment automation through terminal commands.
