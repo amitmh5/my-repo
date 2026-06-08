@@ -1,0 +1,149 @@
+after installing docker what ineranally happens 
+  
+Let's Analyze What Happened
+When you executed:
+
+sudo docker run hello-world
+Docker performed several steps automatically.
+Step 1
+Docker Client received your command.
+
+You
+ |
+docker run hello-world
+ |
+Docker Client
+
+Step 2
+Docker Client contacted Docker Daemon.
+Remember this line?
+
+The Docker client contacted the Docker daemon.
+This means:
+
+docker command
+       |
+Docker Daemon
+       |
+Actual Work
+
+What is Docker Daemon?
+Think:
+
+Docker Client = Manager
+
+Docker Daemon = Worker
+You tell the manager:
+
+docker run hello-world
+Manager tells worker:
+
+Download Image
+Create Container
+Run Container
+Worker does the actual work.
+
+Step 3
+Docker checked:
+
+Do I already have hello-world image?
+Output:
+
+Unable to find image 'hello-world:latest' locally
+Meaning:
+
+Server ❌ Doesn't Have Image
+
+Step 4
+Docker contacted:
+
+Docker Hub
+Think:
+
+GitHub = Source Code Repository
+
+Docker Hub = Image Repository
+Downloaded:
+
+hello-world image
+
+Step 5
+Created Container
+Output says:
+
+Docker daemon created a new container
+Remember:
+
+Image + Run = Container
+
+Step 6
+Container executed program
+Program printed:
+
+Hello from Docker!
+Then exited.
+
+Real Interview Question
+Explain the flow of:
+
+docker run hello-world
+Answer:
+	1. Docker Client receives command. 
+	2. Docker Daemon checks local image. 
+	3. If image doesn't exist, it downloads from Docker Hub. 
+	4. Docker creates a container from the image. 
+	5. Container executes its process. 
+	6. Output is displayed to the user. 
+
+Verify What Exists Now
+Run:
+
+docker images
+This shows:
+
+Available Images
+
+Then run:
+
+docker ps -a
+This shows:
+
+All Containers
+including stopped ones.
+
+What I Want You To Observe
+After running:
+
+docker images
+You'll see:
+
+hello-world
+This is the image.
+
+After running:
+
+docker ps -a
+You'll see:
+
+container-id
+hello-world
+Exited
+This is the container.
+
+This is the Most Important Docker Concept
+
+Image
+   |
+docker run
+   |
+Container
+Later in our project:
+
+frontend-image
+     |
+frontend-container
+
+backend-image
+     |
+backend-container
+Then Kubernetes will manage those containers.
