@@ -1,0 +1,17 @@
+Step 17 - Install Maven
+
+Objective:
+Install Maven build tool for Java applications.
+
+Commands:
+sudo apt update
+sudo apt install maven -y
+
+Verification:
+mvn -version
+
+Expected Result:
+Apache Maven version should be displayed.
+
+Learning:
+Maven is a build automation and dependency management tool used to create deployable artifacts such as JAR and WAR files.
