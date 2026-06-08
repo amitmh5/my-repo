@@ -8,64 +8,48 @@ sudo apt install docker.io -y
 Before running, let's understand it.
 
 sudo
-
 Run as administrator.
 
 apt
-
 Ubuntu package manager.
 
 install
-
 Install software.
 
 docker.io
-
 Docker package name available in Ubuntu repositories.
 
 -y
-
 Automatically answer "yes" to installation prompts.
 
 After Installation
 
 Run these commands one by one:
-
 sudo systemctl enable docker
 
 What it does:
-
 Makes Docker start automatically whenever the server boots.
 
 sudo systemctl start docker
-
 What it does:
-
 Starts the Docker service immediately.
 
 sudo systemctl status docker
-
 What it does:
-
 Checks whether Docker is running.
 
 You should see:
-
 active (running)
+
 Verification
-
 Run:
-
 docker --version
 
 Then:
-
 sudo docker run hello-world
-
 The hello-world image is Docker's test image.
 
 What happens internally:
-
 Docker Hub
       |
 Downloads hello-world image
