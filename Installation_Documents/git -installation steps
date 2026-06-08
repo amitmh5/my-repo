@@ -1,0 +1,16 @@
+Install Git
+
+Objective:
+Install Git to enable source code management and GitHub integration.
+
+Command:
+sudo apt install git -y
+
+Verification:
+git --version
+
+Expected Output:
+git version <version>
+
+Learning:
+Git is a Version Control System used to track code changes and enable CI/CD workflows.
