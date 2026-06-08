@@ -1,0 +1,98 @@
+Step 15 - Install Jenkins
+Objective
+Install Jenkins on the DevOps Server to automate CI/CD pipelines.
+
+Step 15.1 - Verify Java Installation
+Why?
+Jenkins is a Java-based application.
+
+Without Java:
+Jenkins ❌ Cannot Start
+Command
+java --version
+Expected Output
+openjdk version "21.x.x"
+Learning
+Java Runtime Environment (JRE) is required to run Jenkins.
+
+Step 15.2 - Install Java (If Not Installed)
+Command
+sudo apt install -y openjdk-21-jdk
+Verification
+java --version
+Learning
+OpenJDK provides the Java Runtime and Java Development Kit required by Jenkins.
+
+Step 15.3 - Download Jenkins Repository Key
+Why?
+Ubuntu must trust the Jenkins repository before installing packages from it.
+Command
+sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
+Learning
+The Jenkins GPG key is used to verify package authenticity and integrity.
+
+Step 15.4 - Add Jenkins Repository
+Why?
+Tell Ubuntu where Jenkins packages are located.
+Command
+echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+Learning
+A repository is a location from which Ubuntu downloads software packages.
+
+Step 15.5 - Update Package Information
+Why?
+Refresh package metadata after adding the Jenkins repository.
+Command
+sudo apt update
+Learning
+APT updates its package index before installing software.
+
+Step 15.6 - Install Jenkins
+Command
+sudo apt install -y jenkins
+Learning
+This installs Jenkins and creates the Jenkins service on the server.
+
+Step 15.7 - Enable Jenkins Service
+Why?
+Start Jenkins automatically after every server reboot.
+Command
+sudo systemctl enable jenkins
+Learning
+enable configures the service to start automatically during system boot.
+
+Step 15.8 - Start Jenkins Service
+Command
+sudo systemctl start jenkins
+Learning
+Starts the Jenkins service immediately.
+
+Step 15.9 - Verify Jenkins Status
+Command
+sudo systemctl status jenkins
+Expected Output
+active (running)
+Learning
+Systemctl is used to manage Linux services.
+
+Step 15.10 - Verify Jenkins Port
+Command
+sudo ss -tulnp | grep 8080
+Expected Output
+LISTEN
+0.0.0.0:8080
+Learning
+Jenkins listens on port 8080 by default.
+
+Step 15.11 - Access Jenkins UI
+Open in browser:
+http://13.201.121.131:8080
+Expected Screen
+Unlock Jenkins
+Step 15.12 - Retrieve Initial Admin Password
+Command
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+Why?
+Jenkins generates a one-time password during installation.
+Learning
+This password is used to unlock Jenkins for the first time.
