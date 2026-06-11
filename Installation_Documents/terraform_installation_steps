@@ -1,0 +1,16 @@
+terraform--Manual Installation
+
+Go to the official Terraform downloads page:
+
+Terraform Downloads
+https://developer.hashicorp.com/terraform/install?utm_source=chatgpt.com#windows
+
+Download the Windows AMD64 ZIP.
+Extract it.
+Copy terraform.exe to a folder such as:
+C:\Terraform
+Add that folder to the Windows PATH environment variable.
+
+
+Open a new Command Prompt and verify:
+terraform version
